@@ -1,0 +1,42 @@
+name: System Software Program Build, Format & Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-format clang-tidy cmake
+
+      - name: Check C Code Formatting
+        run: |
+          for file in src/*.c; do
+            if [ -f "$file" ]; then
+              clang-format --dry-run --Werror "$file"
+            fi
+          done
+
+      - name: Run Clang-Tidy Analysis
+        run: |
+          for file in src/*.c; do
+            if [ -f "$file" ]; then
+              clang-tidy "$file" -- -I./include
+            fi
+          done
+
+      - name: Configure and Build with CMake
+        run: |
+          cmake -S . -B build
+          cmake --build build
