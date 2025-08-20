@@ -1,9 +1,20 @@
 #include <stdio.h>
 
+#define MAX_PROCESSES 20
+
 int main() {
-  int i, n, t, bu[10], wa[10], tat[10], ct[10], remaining[10];
-  float awt = 0, att = 0;
-  int time = 0, done;
+  int i;
+  int n;
+  int t;
+  int bu[MAX_PROCESSES];
+  int wa[MAX_PROCESSES];
+  int tat[MAX_PROCESSES];
+  int ct[MAX_PROCESSES];
+  int remaining[MAX_PROCESSES];
+  float awt = 0;
+  float att = 0;
+  int time = 0;
+  int done;
 
   printf("Enter the number of processes -- ");
   scanf("%d", &n);

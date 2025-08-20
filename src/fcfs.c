@@ -1,8 +1,15 @@
 #include <stdio.h>
 
+#define MAX_PROCESSES 20
+
 int main() {
-  int bt[20], wt[20], tat[20], i, n;
-  float wtavg, tatavg;
+  int bt[MAX_PROCESSES];
+  int wt[MAX_PROCESSES];
+  int tat[MAX_PROCESSES];
+  int i;
+  int n;
+  float wtavg;
+  float tatavg;
 
   printf("\nEnter the number of processes -- ");
   scanf("%d", &n);
