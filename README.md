@@ -51,18 +51,18 @@ The experiments included in this repository cover topics such as:
 
 ### [**🔗 Experiment 1A: FCFS Scheduling**](src/fcfs.c)
 
-Implements the First-Come, First-Served (FCFS) CPU scheduling algorithm—reads process count and burst times, computes waiting and turnaround times for each process, then prints a table and the average waiting/turnaround times.
+- Implements the First-Come, First-Served (FCFS) CPU scheduling algorithm—reads process count and burst times, computes waiting and turnaround times for each process, then prints a table and the average waiting/turnaround times.
 
 ### [**🔗 Experiment 1B: Priority Scheduling (Non‑preemptive)**](src/priority.c)
 
-Implements Priority scheduling—reads burst times and priorities, sorts by priority (lower = higher), computes waiting and turnaround times, then prints a table and averages.
+- Implements Priority scheduling—reads burst times and priorities, sorts by priority (lower = higher), computes waiting and turnaround times, then prints a table and averages.
 
 ### [**🔗 Experiment 1C: Shortest Job First (SJF, Non‑preemptive)**](src/sjf.c)
 
-Implements SJF—reads burst times, sorts by shortest burst first, computes waiting and turnaround times, then prints a table and averages.
+- Implements SJF—reads burst times, sorts by shortest burst first, computes waiting and turnaround times, then prints a table and averages.
 
 ### [**🔗 Experiment 1B: Round Robin (RR)**](src/rr.c)
 
-Implements Round Robin—reads burst times and a time quantum, simulates cyclic execution to get turnaround and waiting times, then prints a table and averages.
+- Implements Round Robin—reads burst times and a time quantum, simulates cyclic execution to get turnaround and waiting times, then prints a table and averages.
 
 ---
