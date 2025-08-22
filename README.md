@@ -9,15 +9,15 @@ file operations, and directory manipulation.
 ## 📂 Repository Structure
 ```
 System-Software-Lab/
-|
-|-- src/                        # Contains all C program experiments
-|   |-- fcfs.c                  # Experiment 1A: FCFS Scheduling
-|   |-- priority.c              # Experiment 1B: Priority Scheduling
-|   |-- rr.c                    # Experiment 1C: Shortest Job First
-|   |-- sjf.c                   # Experiment 1D: Round Robin
-|-- CMakeLists.txt              # CMake Setup
-|-- README.md                   # This file
-|-- build/                      # Compiled binaries (after build)
+│
+│── src/                        # Contains all C program experiments
+│   │── fcfs.c                  # Experiment 1A: FCFS Scheduling
+│   │── priority.c              # Experiment 1B: Priority Scheduling
+│   │── rr.c                    # Experiment 1C: Shortest Job First
+│   │── sjf.c                   # Experiment 1D: Round Robin
+│── CMakeLists.txt              # CMake Setup
+│── README.md                   # This file
+│── build/                      # Compiled binaries (after build)
 ```
 ## ⚙️ Setup & Usage 
 
