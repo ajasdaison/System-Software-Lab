@@ -28,21 +28,21 @@ System-Software-Lab/
 ### Steps to Build and Run  
 
 1. Clone the repository:  
-    ```bash
+    ```sh
     git clone https://github.com/ajasdaison/System-Software-Lab.git
     cd System-Software-Lab
     ```
 2. Create a build directory and configure with CMake:
-    ```bash
+    ```sh
     mkdir build && cd build
     cmake ..
     ```
 3. Build the experiments:
-    ```bash
+    ```sh
     make
     ```
 4. Run a specific experiment (example for exp1):
-    ```bash
+    ```sh
     ./exp1/exp1_executable
     ```
 
