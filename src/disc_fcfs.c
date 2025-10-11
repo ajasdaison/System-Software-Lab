@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int main() {
-  int queue[20], n, head, i, j, k, seek = 0, diff; //NOLINT
+  int queue[20], n, head, i, j, k, seek = 0, diff; // NOLINT
   float avg;
   printf("Enter the size of queue request\n");
   scanf("%d", &n);

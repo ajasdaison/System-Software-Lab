@@ -1,6 +1,7 @@
 #include <stdio.h>
 int main() {
-  int q[20], p[50], c = 0, c1, d, f, i, j, k = 0, n, r, t, b[20], c2[20]; //NOLINT
+  int q[20], p[50], c = 0, c1, d, f, i, j, k = 0, n, r, t, b[20],
+                    c2[20]; // NOLINT
   printf("Enter no of pages:");
   scanf("%d", &n);
   printf("Enter the reference string:");

@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main() {
-  int n, m, i, j, k, y, alloc[20][20], max[20][20], avail[50], ind = 0; //NOLINT
+  int n, m, i, j, k, y, alloc[20][20], max[20][20], avail[50], ind = 0; // NOLINT
   printf("Enter the no of Proceses:");
   scanf("%d", &n);
   printf("Enter the no of resources:");
@@ -18,7 +18,7 @@ int main() {
   printf("Enter the Available Matrix:");
   for (i = 0; i < m; i++)
     scanf("%d", &avail[i]);
-  int finish[n], safesequence[n], work[m], need[n][m]; //NOLINT
+  int finish[n], safesequence[n], work[m], need[n][m]; // NOLINT
   for (i = 0; i < m; i++) {
     work[i] = avail[i];
   }

@@ -61,7 +61,7 @@ void lfu_page_replacement(const int pages[], int num_pages, int num_frames) {
   printf("Total page faults: %d\n", page_faults);
 }
 int main() {
-  int num_frames, num_pages; //NOLINT
+  int num_frames, num_pages; // NOLINT
   printf("Enter number of frames: ");
   scanf("%d", &num_frames);
   printf("Enter number of pages: ");

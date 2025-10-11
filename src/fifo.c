@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main() {
-  int i, j, n, a[50], frame[10], no, k, avail, count = 0;  //NOLINT
+  int i, j, n, a[50], frame[10], no, k, avail, count = 0; // NOLINT
   printf("\n ENTER THE NUMBER OF PAGES:");
   scanf("%d", &n);
   printf("\n ENTER THE PAGE NUMBER :");

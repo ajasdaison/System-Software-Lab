@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main() {
-  int t[20], d[20], h, i, j, n, temp, k, atr[20], tot, p, sum = 0; //NOLINT
+  int t[20], d[20], h, i, j, n, temp, k, atr[20], tot, p, sum = 0; // NOLINT
   printf("enter the no of tracks to be traveresed:");
   scanf("%d'", &n);
   printf("enter the position of head:");
