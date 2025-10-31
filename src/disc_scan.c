@@ -1,49 +1,89 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 int main() {
-  int t[20], d[20], h, i, j, n, temp, k, atr[20], tot, p, sum = 0; // NOLINT
-  printf("Enter the no of tracks to be traveresed:");
-  scanf("%d'", &n);
-  printf("Enter the position of head:");
-  scanf("%d", &h);
-  t[0] = 0;
-  t[1] = h;
-  printf("enter the tracks:");
-  for (i = 2; i < n + 2; i++)
-    scanf("%d", &t[i]);
-  for (i = 0; i < n + 2; i++) {
-    for (j = 0; j < (n + 2) - i - 1; j++) {
-      if (t[j] > t[j + 1]) {
-        temp = t[j];
-        t[j] = t[j + 1];
-        t[j + 1] = temp;
-      }
+    int n, head, i, j, direction;
+    int request[50], seek = 0;
+    int temp, size = 200;  // assume disk size is 0–199
+    float avg;
+
+    printf("Enter number of requests: ");
+    scanf("%d", &n);
+
+    printf("Enter request sequence: ");
+    for (i = 0; i < n; i++)
+        scanf("%d", &request[i]);
+
+    printf("Enter initial head position: ");
+    scanf("%d", &head);
+
+    printf("Enter head movement direction (1 for high →, 0 for low ←): ");
+    scanf("%d", &direction);
+
+    // Add head and disk end positions
+    request[n] = head;
+    n++;
+
+    // Sort the request array
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) {
+            if (request[j] > request[j + 1]) {
+                temp = request[j];
+                request[j] = request[j + 1];
+                request[j + 1] = temp;
+            }
+        }
     }
-  }
-  for (i = 0; i < n + 2; i++)
-    if (t[i] == h) {
-      j = i;
-      k = i;
+
+    // Find position of head
+    int pos;
+    for (i = 0; i < n; i++) {
+        if (request[i] == head) {
+            pos = i;
+            break;
+        }
     }
-  p = 0;
-  while (t[j] != 0) {
-    atr[p] = t[j];
-    j--;
-    p++;
-  }
-  atr[p] = t[j];
-  for (p = p + 1; p < n + 2; p++, k++)
-    atr[p] = t[k + 1];
-  printf("Tracks Traversed Difference between Tracks\n");
-  printf(" \n");
-  for (j = 0; j < n + 1; j++) {
-    if (atr[j] > atr[j + 1])
-      d[j] = atr[j] - atr[j + 1];
-    else
-      d[j] = atr[j + 1] - atr[j];
-    sum += d[j];
-    printf("%6d\t\t\t %6d\n", atr[j], d[j]);
-  }
-  printf("%6d\n", atr[j]);
-  printf("\nAverage header movements:%f", (float)sum / n);
-  return 0;
+
+    printf("\nSeek Sequence:\n");
+
+    // SCAN logic
+    if (direction == 1) { // move right first
+        for (i = pos; i < n; i++) {
+            printf("%d → ", request[i]);
+            if (i != n - 1)
+                seek += abs(request[i + 1] - request[i]);
+        }
+        // go to end of disk
+        printf("199 → ");
+        seek += abs(199 - request[n - 1]);
+
+        // now move left
+        for (i = pos - 1; i >= 0; i--) {
+            printf("%d → ", request[i]);
+            if (i != 0)
+                seek += abs(request[i] - request[i - 1]);
+        }
+    } else { // move left first
+        for (i = pos; i >= 0; i--) {
+            printf("%d → ", request[i]);
+            if (i != 0)
+                seek += abs(request[i] - request[i - 1]);
+        }
+        // go to start of disk
+        printf("0 → ");
+        seek += abs(request[0] - 0);
+
+        // now move right
+        for (i = pos + 1; i < n; i++) {
+            printf("%d → ", request[i]);
+            if (i != n - 1)
+                seek += abs(request[i + 1] - request[i]);
+        }
+    }
+
+    printf("\nTotal Seek Time = %d", seek);
+    avg = (float)seek / (n - 1);
+    printf("\nAverage Seek Time = %.2f\n", avg);
+
+    return 0;
 }
