@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 int main() {
-  int n, m;
+  int n, m; // NOLINT
   printf("Enter number of processes: ");
   scanf("%d", &n);
   printf("Enter number of resources: ");
   scanf("%d", &m);
 
-  int alloc[20][20], max[20][20], avail[20];
-  int need[20][20], finish[20] = {0}, safeSeq[20];
+  int alloc[20][20], max[20][20], avail[20], work[20]; // NOLINT
+  int need[20][20], finish[20] = {0}, safeSeq[20];     // NOLINT
 
   printf("Enter Allocation Matrix:\n");
   for (int i = 0; i < n; i++)
@@ -33,17 +33,16 @@ int main() {
     printf("\n");
   }
 
-  int work[20];
   for (int i = 0; i < m; i++)
     work[i] = avail[i];
 
-  int count = 0;  
+  int count = 0;
 
   while (count < n) {
-    int found = 0;  
+    int found = 0;
 
     for (int i = 0; i < n; i++) {
-      if (!finish[i]) { 
+      if (!finish[i]) {
         int can_run = 1;
         for (int j = 0; j < m; j++) {
           if (need[i][j] > work[j]) {
@@ -76,4 +75,3 @@ int main() {
 
   return 0;
 }
-

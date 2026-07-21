@@ -23,16 +23,13 @@ int main() {
     scanf("%d", &bt[i]);
   }
 
-  // Sort based on burst time
   for (i = 0; i < n; i++) {
     for (k = i + 1; k < n; k++) {
       if (bt[i] > bt[k]) {
-        // Swap burst times
         temp = bt[i];
         bt[i] = bt[k];
         bt[k] = temp;
 
-        // Swap process IDs
         temp = p[i];
         p[i] = p[k];
         p[k] = temp;
