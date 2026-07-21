@@ -1,0 +1,9 @@
+COPY START 1000
+**   LDA  ALPHA
+**   ADD  ONE
+**   SUB  TWO
+ALPHA RESW 1
+ONE   WORD 1
+TWO   WORD 2
+**   END  **
+
